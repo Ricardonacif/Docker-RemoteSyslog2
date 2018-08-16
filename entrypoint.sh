@@ -2,12 +2,13 @@
 set -e
 
 if [ -n "${SYSLOG_GET_EC2_HOSTNAME+set}" ]; then
-  echo 'here1'
+  echo 'Curling ec2 hostname'
   INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 else
-  echo 'here2'
   INSTANCE_ID=no-hostname
 fi
+echo 'Ec2 hostname:'
+echo $INSTANCE_ID
 
 # when no arguments are passed set options from environment
 # otherwise append all arguments to the remote_syslog command
