@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.8
 MAINTAINER Jan Broer <janeczku@yahoo.com>
 
 RUN apk add --update -t build-dependencies wget ca-certificates \
