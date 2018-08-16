@@ -1,6 +1,8 @@
 FROM alpine:3.8
 MAINTAINER Jan Broer <janeczku@yahoo.com>
 
+RUN apk --no-cache add curl
+
 RUN apk add --update -t build-dependencies wget ca-certificates \
   && wget -q -O - https://github.com/papertrail/remote_syslog2/releases/download/v0.20/remote_syslog_linux_amd64.tar.gz \
   | tar -zxf - \
