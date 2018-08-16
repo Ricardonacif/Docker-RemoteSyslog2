@@ -2,8 +2,10 @@
 set -e
 
 if [[ -z "${SYSLOG_GET_EC2_HOSTNAME}" ]]; then
+  echo 'here1'
   INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 else
+  echo 'here2'
   INSTANCE_ID=no-hostname
 fi
 
