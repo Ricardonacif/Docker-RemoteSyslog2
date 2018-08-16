@@ -1,7 +1,11 @@
 #!/bin/ash
 set -e
 
-INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
+if [[ -z "${USE_EC2_HOSTNAME}" ]]; then
+  INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
+else
+  INSTANCE_ID=no-hostname
+fi
 
 # when no arguments are passed set options from environment
 # otherwise append all arguments to the remote_syslog command
