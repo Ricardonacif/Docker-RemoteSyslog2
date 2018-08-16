@@ -1,7 +1,7 @@
 #!/bin/ash
 set -e
 
-if [[ -z "${SYSLOG_GET_EC2_HOSTNAME}" ]]; then
+if [ -n "${SYSLOG_GET_EC2_HOSTNAME+set}" ]; then
   echo 'here1'
   INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 else
