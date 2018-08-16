@@ -1,5 +1,7 @@
 ## Docker RemoteSyslog2 
 
+VERSION ADAPTED FOR ELASTIC BEANSTALK
+
 Docker RemoteSyslog2 leverages the deployment agility of Docker, the slickness of [Alpine Linux](https://github.com/gliderlabs/docker-alpine) and the conveniance of [remote_syslog2](https://github.com/papertrail/remote_syslog2/) to bootstrap remote logging capabilities for both Docker hosts and containers.    
 It automates the collection and sending of logs to central log collectors or cloud-based log management services by tailing log files and emitting syslog messages over UDP, TCP or TCP/TLS.
 
