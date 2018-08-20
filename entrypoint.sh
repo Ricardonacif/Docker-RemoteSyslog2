@@ -25,7 +25,7 @@ if [[ -z ${1} ]]; then
   echo "SYSLOG_PORT:"
   echo $SYSLOG_PORT
 
-  exec /remote_syslog/remote_syslog -D --poll --dest-host=${SYSLOG_HOST} --dest-port=${SYSLOG_PORT:-514} \
+  exec /remote_syslog/remote_syslog -D --dest-host=${SYSLOG_HOST} --dest-port=${SYSLOG_PORT:-514} \
   	--tcp=${SYSLOG_TCP:-false} --tls=${SYSLOG_TLS:-false} --facility=${SYSLOG_FACILITY:-user} \
   	--severity=${SYSLOG_SEVERITY:-notice} --hostname=${SYSLOG_HOSTNAME}-${INSTANCE_ID} ${SYSLOG_FILES}
 else
